@@ -1,4 +1,13 @@
-Basic full-stack JavaScript app template
+Mood Calendar: A second draft of group app made in school. this time done independently.
+
+
+1. Design basic outline of the website by using index and css
+2. transfer into react components
+
+
+
+
+
 
 To build: npm run build
 
