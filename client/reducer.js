@@ -3,6 +3,7 @@
 const initial_state = {
 	spam: 'ham',
 	paula: 'brillant [sic]',
+	entries: [],
 };
 
 export default function reducer(state=initial_state, action={}) {
@@ -15,7 +16,7 @@ export default function reducer(state=initial_state, action={}) {
 			return {...state, paula: action.paula};
 		case 'FETCH_HELLO_SUCCESS':
 			console.log("The server says:", action.message);
-			break;
+			return {...state, entries: action.message }
 		case 'REPORT_FAILURE':
 			console.error("Failure in " + action.what + ":");
 			console.error(action.error);

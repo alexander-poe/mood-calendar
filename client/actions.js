@@ -13,7 +13,7 @@ export const replace_paula = (new_paula) => ({
 
 //"Second-half" actions don't have to be exported (they're only called from
 //here). It doesn't hurt to export them, though, if you prefer consistency.
-const fetch_hello_success = message => ({
+const fetch_entries_success = message => ({
 	type: 'FETCH_HELLO_SUCCESS',
 	message
 })
@@ -26,11 +26,11 @@ const report_failure = (what, error) => ({
 })
 
 export const fetch_hello = () => dispatch => {
-	return fetch("/hello").then(response => {
+	return fetch("/entries").then(response => {
 		if (!response.ok) throw(new Error(response.statusText));
 		return response.json();
 	}).then(data =>
-		dispatch(fetch_hello_success(data.message))
+		dispatch(fetch_entries_success(data))
 	).catch(error =>
 		dispatch(report_failure("fetch_hello", error))
 	);
