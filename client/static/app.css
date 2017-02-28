@@ -53,4 +53,5 @@ body {
   height: 108px;
   margin: 3%;
   background: ghostwhite;
+  overflow-y: hidden;
 }
