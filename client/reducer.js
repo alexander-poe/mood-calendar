@@ -15,8 +15,8 @@ export default function reducer(state=initial_state, action={}) {
 		case 'REPLACE_PAULA':
 			return {...state, paula: action.paula};
 		case 'FETCH_HELLO_SUCCESS':
-			console.log("The server says:", action.message);
-			return {...state, entries: action.message }
+			console.log("The server says:", action.message.entries);
+			return {...state, entries: action.message.entries }
 		case 'REPORT_FAILURE':
 			console.error("Failure in " + action.what + ":");
 			console.error(action.error);

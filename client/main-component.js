@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import * as actions from './actions';
+import _ from 'lodash';
 import NewPaula from './new-paula';
 
 class MainComponent extends React.Component {
@@ -13,18 +14,25 @@ class MainComponent extends React.Component {
 		render() {
 
 			const entries =	this.props.entries ? this.props.entries : null;
-			console.log(entries)
+			const nodes = entries !== [] ? entries.map((entry, index) => {
+				const mood = entry.mood;
+				const date = entry.date;
+				const text = entry.entry;
+				return (
+					<div className="entryContainer">
+						<h2> { mood } </h2>
+						<h2> { date } </h2>
+						<p> { text } </p>
+					</div>
+				)
+			})
+			: null;
 
         return (
             <div className="mainPageParentContainer">
                 <div className="mainPageFilter"></div>
                 <div className="mainPageEntryContainer">
-                    <div className="entryContainer"></div>
-                    <div className="entryContainer"></div>
-                    <div className="entryContainer"></div>
-                    <div className="entryContainer"></div>
-                    <div className="entryContainer"></div>
-                    <div className="entryContainer"></div>
+    							{ nodes }
                 </div>
                 <div className="navigationContainer">
                     <div className="navigationArrowsContainer">
