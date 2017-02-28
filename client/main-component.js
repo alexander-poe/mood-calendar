@@ -14,6 +14,7 @@ class MainComponent extends React.Component {
   render() {
     const entries =	this.props.entries ? this.props.entries : null;
     const nodes = entries !== [] ? entries.map((entry, index) => {
+      console.log(entry);
       const mood = entry.mood;
       const date = entry.date;
       const text = entry.entry;

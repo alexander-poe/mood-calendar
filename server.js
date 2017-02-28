@@ -76,7 +76,7 @@ app.post('/users', (req, res) => {
 });
 app.post('/entries', (req, res) => {
   const body = req.body;
-  console.log('83', body);
+  console.log(body);
   if (!body) {
     return res.status(400).json({
       message: 'No request body',
